@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REINA ACADEMIA</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Updated Font Awesome to v6.5.2 to support fa-x-twitter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Background Sparkles -->
+    <div class="sparkles-container">
+        <i class="fa-solid fa-sparkle sparkle" style="top: 15%; left: 10%; font-size: 1.8rem;">✦</i>
+        <i class="fa-solid fa-sparkle sparkle" style="top: 40%; left: 20%; font-size: 2.5rem;">✦</i>
+        <i class="fa-solid fa-sparkle sparkle" style="top: 70%; left: 8%; font-size: 1.2rem;">✦</i>
+        <i class="fa-solid fa-sparkle sparkle" style="top: 85%; left: 25%; font-size: 2rem;">✦</i>
+        <i class="fa-solid fa-sparkle sparkle" style="top: 10%; left: 75%; font-size: 2.2rem;">✦</i>
+        <i class="fa-solid fa-sparkle sparkle" style="top: 55%; left: 75%; font-size: 2.5rem;">✦</i>
+        <i class="fa-solid fa-sparkle sparkle" style="top: 90%; left: 78%; font-size: 1.8rem;">✦</i>
+    </div>
+
+    <div class="main-container">
+        
+        <!-- Top Header Bar -->
+        <header class="top-bar">
+            <span class="top-bar-title">&#10141; - <sub>`</sub> all hail, royals! 👁</span>
+            <button class="menu-btn" id="menuToggleBtn" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Profile Hero Card -->
+        <section class="card profile-card">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <div class="avatar-circle">
+                        <span class="logo-text">REINA<br>ACADEMIA</span>
+                    </div>
+                </div>
+
+                <div class="brand-info">
+                    <h1>reina academia</h1>
+                    <span class="crown-icon">👑</span>
+                    <p class="subtitle">academic commissions</p>
+                    <p class="est">est '21</p>
+
+                    <!-- Social Icons (Email and X/Twitter) -->
+                    <div class="social-links">
+                        <a href="mailto:example@gmail.com" class="social-icon" aria-label="Email" title="Email"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="https://x.com/reina_academias" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X/Twitter" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Panel -->
+                <nav class="nav-buttons" id="navPanel">
+                    <button type="button" class="nav-btn active" id="btnAbout"><i class="fa-regular fa-user"></i> about us!</button>
+                    <button type="button" class="nav-btn" id="btnTC"><i class="fa-solid fa-check"></i> t&amp;c</button>
+                    <button type="button" class="nav-btn" id="btnServices"><i class="fa-regular fa-file-lines"></i> services</button>
+                    <button type="button" class="nav-btn" id="btnInquiry"><i class="fa-regular fa-envelope"></i> inquiry form</button>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Pill Section Banner -->
+        <div class="pill-banner" id="pillBanner">
+            <span id="pillTitle">ღ about us ღ</span>
+        </div>
+
+        <!-- Dynamic View Card -->
+        <section class="card content-card">
+            
+            <!-- VIEW 1: ABOUT US -->
+            <div id="viewAbout" class="view-block">
+                <ul class="bullet-list">
+                    <li>there are two (2) admins of ra: ara and jo, ara usually answers in dms.</li>
+                    <li>she/her (both admins)</li>
+                    <li>humss graduates with high honors and gwa of 97%</li>
+                    <li>both are currently bs psychology students studying in manila.</li>
+                    <li>consistent honor students from jhs to shs.</li>
+                    <li>started academic commissions since 2021.</li>
+                    <li>catered 500+ commissions</li>
+                </ul>
+            </div>
+
+            <!-- VIEW 2: TERMS AND CONDITIONS -->
+            <div id="viewTC" class="view-block hidden">
+                <div class="card-box">
+                    <ul class="bullet-list">
+                        <li>clients are required to answer the inquiry form on dms. failed to answer the form = no reply.</li>
+                        <li>after replying, the commissioner will offer the price for the task.</li>
+                        <li>clients must fill out the reservation form via google forms to reserve their slot. commissioners will send the link after the negotiation.</li>
+                        <li>strictly <b>payment first</b>. clients must pay the full or at least 25% of the price to reserve their slot. failed to do so = forfeited slot!</li>
+                    </ul>
+                </div>
+
+                <div class="card-box">
+                    <ul class="bullet-list">
+                        <li>no cancellation of slot. a penalty of <b>php 100.00</b> will be paid by the client.</li>
+                        <li>clients must give the time for the commissioner to submit the work. failed to give the time = tasks will be given on or before 11:59pm of the indicated deadline.</li>
+                        <li>commissioners will give two (2) free minor revision within 24hrs after the work was given to the client. however, the revision will not include the full revision or additional work that wasn't indicated as per the client's instruction. concise instructions will be helpful for both client and commissioner.</li>
+                    </ul>
+                </div>
+
+                <div class="card-box">
+                    <ul class="bullet-list">
+                        <li>rest assured that the client's identity will remain as confidential as well as their transaction to the commissioner.</li>
+                        <li>please leave a feedback through dms after the submission of tasks.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- VIEW 3: SERVICES -->
+            <div id="viewServices" class="view-block hidden">
+                <div class="sub-pill-container">
+                    <span class="sub-pill">what we offer</span>
+                    <span class="sub-pill">what we don't offer</span>
+                </div>
+
+                <div class="services-columns">
+                    <div class="services-column">
+                        <div class="service-group">
+                            <p><b>writing</b> - essay, position paper, critique paper, poem, reaction paper, reflection paper, speech, short stories</p>
+                        </div>
+                        <div class="service-group">
+                            <p><b>graphic and designing</b> - infographics, ppt presentation, invitations, brochures</p>
+                        </div>
+                        <div class="service-group">
+                            <p><b>humss subjects</b> - philippine politics and governance, social science, applied social science, creative writing, creative non-fiction, world religions and beliefs, community engagement</p>
+                        </div>
+                        <div class="service-group">
+                            <p><b>psychology</b> - intro to psychology, developmental psychology, theories of personality, experimental psychology, social psychology, field methods in psychology</p>
+                        </div>
+                    </div>
+
+                    <div class="services-column no-offer">
+                        <ul class="bullet-list">
+                            <li>math-related tasks</li>
+                            <li>timed quizzes</li>
+                            <li>exams</li>
+                            <li>lab reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 4: INQUIRY FORM -->
+            <div id="viewInquiry" class="view-block hidden">
+                <h2 class="card-heading">All hail, Royals! We are REINA ACADEMIA!</h2>
+                <p class="intro-text">
+                    ✧.* we are excited to work with you! kindly fill out our <i>inquiry form</i> for smooth transaction. no inquiry form = no reply!
+                </p>
+
+                <form class="inquiry-form" id="inquiryForm">
+                    <div class="form-group">
+                        <label for="name">name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade">grade/year level:</label>
+                        <input type="text" id="grade" name="grade" placeholder="Grade 12 / 1st Year" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">subject:</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task">task:</label>
+                        <input type="text" id="task" name="task" placeholder="Essay, Infographics, etc." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instruction">instruction:</label>
+                        <textarea id="instruction" name="instruction" rows="4" placeholder="Detailed guidelines & rubrics" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">e-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deadline">preferred deadline (date and time):</label>
+                        <input type="datetime-local" id="deadline" name="deadline" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">budget:</label>
+                        <input type="text" id="budget" name="budget" placeholder="e.g. Php 300" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+
+                <div class="notes-list">
+                    <p>✒ replying to this inquiry form means you are open to work with us. after negotiating, a reservation form must be answered for the reservation of your slot. link: <a href="https://forms.gle/wsz1vgy6dj5xdj168" target="_blank" rel="noopener noreferrer">https://forms.gle/wsz1vgy6dj5xdj168</a></p>
+                    <p>✒ before you answer the reservation form, do not forget to read our terms and condition on our commsheet.</p>
+                    <p>✒ please message us about the full detail of your task. we will rely on your given instructions only.</p>
+                    <p>✒ answering our reservation form means you agreed to work with us and understand our no cancellation policy.</p>
+                </div>
+
+                <p class="outro-text">thank you so much, we're hoping to work with you soon! <sub>`</sub>👁</p>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

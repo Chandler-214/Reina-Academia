@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation & View switching logic
+    // --- NAVIGATION & VIEW SWITCHING LOGIC ---
     const btnAbout = document.getElementById('btnAbout');
     const btnTC = document.getElementById('btnTC');
     const btnServices = document.getElementById('btnServices');
@@ -47,10 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- EMAILJS FORM SUBMISSION ---
-    
-    // Initialize EmailJS (Replace YOUR_PUBLIC_KEY with your key)
-    emailjs.init("YOUR_PUBLIC_KEY");
-
     const inquiryForm = document.getElementById('inquiryForm');
 
     if (inquiryForm) {
@@ -59,18 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const submitBtn = inquiryForm.querySelector('.submit-btn');
             const originalBtnText = submitBtn.textContent;
+            
+            // Show loading status on button
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            // 1. Send notification email to Admin
-            const adminEmailPromise = emailjs.sendForm('YOUR_SERVICE_ID', 'ADMIN_TEMPLATE_ID', this);
+            // Replace with your EmailJS Service ID and Template ID
+            const serviceID = 'service_uw10a1h';
+            const templateID = 'template_68fbwl8';
 
-            // 2. Send receipt confirmation email to Customer
-            const customerEmailPromise = emailjs.sendForm('YOUR_SERVICE_ID', 'CUSTOMER_TEMPLATE_ID', this);
-
-            Promise.all([adminEmailPromise, customerEmailPromise])
+            emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
-                    alert('Thank you! Your inquiry has been sent successfully. A confirmation receipt was emailed to you.');
+                    alert('Thank you! Your inquiry has been successfully sent.');
                     inquiryForm.reset();
                 })
                 .catch((error) => {

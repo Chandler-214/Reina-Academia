@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REINA ACADEMIA</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Updated Font Awesome to v6.5.2 to support fa-x-twitter -->
+    <!-- Font Awesome v6.5.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your Public Key
+            emailjs.init({
+              publicKey: "sVj4ADfBfRWk4IXYr", // Replace with your EmailJS Public Key
+            });
+        })();
+    </script>
 </head>
 <body>
 
@@ -38,7 +47,6 @@
             <div class="profile-header">
                 <div class="avatar-container">
                     <div class="avatar-circle">
-                        <!-- Updated: Replaced text logo with the new image asset -->
                         <img src="logo.jpg" alt="Reina Academia Logo" class="logo-img">
                     </div>
                 </div>
@@ -49,7 +57,7 @@
                     <p class="subtitle">academic commissions</p>
                     <p class="est">est '21</p>
 
-                    <!-- Social Icons (Email and X/Twitter) -->
+                    <!-- Social Icons -->
                     <div class="social-links">
                         <a href="mailto:senoritasoojin@gmail.com" class="social-icon" aria-label="Email" title="Email"><i class="fa-regular fa-envelope"></i></a>
                         <a href="https://x.com/reina_academias" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X/Twitter" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
@@ -155,6 +163,7 @@
                     ✧.* we are excited to work with you! kindly fill out our <i>inquiry form</i> for smooth transaction. no inquiry form = no reply!
                 </p>
 
+                <!-- Inquiry Form configured with field names corresponding to EmailJS templates -->
                 <form class="inquiry-form" id="inquiryForm">
                     <div class="form-group">
                         <label for="name">name:</label>

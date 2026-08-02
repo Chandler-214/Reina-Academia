@@ -1,4 +1,52 @@
-// --- FORM SUBMISSION (OPTIMIZED MAILTO METHOD) ---
+document.addEventListener('DOMContentLoaded', () => {
+    // --- NAVIGATION & VIEW SWITCHING LOGIC ---
+    const btnAbout = document.getElementById('btnAbout');
+    const btnTC = document.getElementById('btnTC');
+    const btnServices = document.getElementById('btnServices');
+    const btnInquiry = document.getElementById('btnInquiry');
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+
+    const navPanel = document.getElementById('navPanel');
+    const pillTitle = document.getElementById('pillTitle');
+
+    const viewAbout = document.getElementById('viewAbout');
+    const viewTC = document.getElementById('viewTC');
+    const viewServices = document.getElementById('viewServices');
+    const viewInquiry = document.getElementById('viewInquiry');
+
+    const views = {
+        about: { block: viewAbout, btn: btnAbout, title: 'ღ about us ღ' },
+        tc: { block: viewTC, btn: btnTC, title: 'ღ terms and conditions ღ' },
+        services: { block: viewServices, btn: btnServices, title: 'ღ services ღ' },
+        inquiry: { block: viewInquiry, btn: btnInquiry, title: 'ღ inquiry form ღ' }
+    };
+
+    function switchView(targetKey) {
+        Object.keys(views).forEach(key => {
+            const view = views[key];
+            if (key === targetKey) {
+                view.block.classList.remove('hidden');
+                view.btn.classList.add('active');
+                pillTitle.textContent = view.title;
+            } else {
+                view.block.classList.add('hidden');
+                view.btn.classList.remove('active');
+            }
+        });
+    }
+
+    if (btnAbout) btnAbout.addEventListener('click', () => switchView('about'));
+    if (btnTC) btnTC.addEventListener('click', () => switchView('tc'));
+    if (btnServices) btnServices.addEventListener('click', () => switchView('services'));
+    if (btnInquiry) btnInquiry.addEventListener('click', () => switchView('inquiry'));
+
+    if (menuToggleBtn && navPanel) {
+        menuToggleBtn.addEventListener('click', () => {
+            navPanel.style.display = (navPanel.style.display === 'none') ? 'grid' : 'none';
+        });
+    }
+
+    // --- FORM SUBMISSION (OPTIMIZED MAILTO METHOD) ---
     const inquiryForm = document.getElementById('inquiryForm');
 
     if (inquiryForm) {
@@ -33,15 +81,15 @@
 
             const mailtoUrl = `mailto:senoritasoojin@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
-            // Trigger the mail application using a temporary anchor element
-            // (This prevents the main browser tab from going into a frozen "loading" state)
+            // Create temporary anchor to launch mail application instantly without hanging the page
             const tempLink = document.createElement('a');
             tempLink.href = mailtoUrl;
             tempLink.click();
 
-            // Immediate feedback for the user
-            alert('Opening your email app... Please press "Send" in your email client to complete your inquiry!');
+            // Immediate feedback popup
+            alert('Opening your mail application... Please press "Send" in your email client to complete your inquiry!');
             
             inquiryForm.reset();
         });
     }
+});

@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `Instructions:\n${instruction}`
             );
 
-            const mailtoUrl = `mailto:senoritasoojin@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+            const mailtoUrl = `mailto:academicsreina@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
             // Create temporary anchor to launch mail application instantly without hanging the page
             const tempLink = document.createElement('a');

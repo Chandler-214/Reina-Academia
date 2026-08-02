@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- NAVIGATION & VIEW SWITCHING LOGIC ---
+    // Navigation & View switching logic
     const btnAbout = document.getElementById('btnAbout');
     const btnTC = document.getElementById('btnTC');
     const btnServices = document.getElementById('btnServices');
@@ -46,37 +46,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- EMAILJS FORM SUBMISSION ---
+    // --- FORM SUBMISSION (MAILTO METHOD) ---
     const inquiryForm = document.getElementById('inquiryForm');
 
     if (inquiryForm) {
         inquiryForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const submitBtn = inquiryForm.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.textContent;
+            // Extract input values
+            const name = document.getElementById('name').value;
+            const grade = document.getElementById('grade').value;
+            const subject = document.getElementById('subject').value;
+            const task = document.getElementById('task').value;
+            const instruction = document.getElementById('instruction').value;
+            const userEmail = document.getElementById('email').value;
+            const deadline = document.getElementById('deadline').value;
+            const budget = document.getElementById('budget').value;
+
+            // Format Email Subject and Body
+            const emailSubject = encodeURIComponent(`Inquiry - ${name} (${task})`);
             
-            // Show loading status on button
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+            const emailBody = encodeURIComponent(
+                `REINA ACADEMIA INQUIRY FORM\n` +
+                `------------------------------------\n` +
+                `Name: ${name}\n` +
+                `Grade/Year Level: ${grade}\n` +
+                `Subject: ${subject}\n` +
+                `Task: ${task}\n` +
+                `Client Email: ${userEmail}\n` +
+                `Preferred Deadline: ${deadline}\n` +
+                `Budget: ${budget}\n\n` +
+                `Instructions:\n${instruction}`
+            );
 
-            // Replace with your EmailJS Service ID and Template ID
-            const serviceID = 'service_uw10a1h';
-            const templateID = 'template_68fbwl8';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    alert('Thank you! Your inquiry has been successfully sent.');
-                    inquiryForm.reset();
-                })
-                .catch((error) => {
-                    console.error('EmailJS Error:', error);
-                    alert('Failed to send inquiry. Please try again or reach out via DMs.');
-                })
-                .finally(() => {
-                    submitBtn.textContent = originalBtnText;
-                    submitBtn.disabled = false;
-                });
+            // Open user's default email client pre-filled with form details
+            window.location.href = `mailto:senoritasoojin@gmail.com?subject=${emailSubject}&body=${emailBody}`;
         });
     }
 });

@@ -7,17 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome v6.5.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // Initialize EmailJS with your Public Key
-            emailjs.init({
-              publicKey: "sVj4ADfBfRWk4IXYr", // Replace with your EmailJS Public Key
-            });
-        })();
-    </script>
 </head>
 <body>
 
@@ -163,7 +152,6 @@
                     ✧.* we are excited to work with you! kindly fill out our <i>inquiry form</i> for smooth transaction. no inquiry form = no reply!
                 </p>
 
-                <!-- Inquiry Form configured with field names corresponding to EmailJS templates -->
                 <form class="inquiry-form" id="inquiryForm">
                     <div class="form-group">
                         <label for="name">name:</label>
@@ -205,7 +193,7 @@
                         <input type="text" id="budget" name="budget" placeholder="e.g. Php 300" required>
                     </div>
 
-                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                    <button type="submit" class="submit-btn">Submit Inquiry via Email</button>
                 </form>
 
                 <div class="notes-list">
